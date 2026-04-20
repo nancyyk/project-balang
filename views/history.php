@@ -14,16 +14,16 @@ if ($status != "semua") {
 }
 ?>
 
-<div class="bg-white min-h-screen py-12">
+<div class="min-h-screen w-full py-12 bg-gradient-to-br from-purple-100 via-white to-purple-100">
 
 <div class="max-w-7xl mx-auto px-6">
 
 <!-- HEADER -->
 <div class="mb-10">
-    <h1 class="text-4xl font-bold text-slate-900">
+    <h1 class="text-4xl font-extrabold text-purple-800">
         History Laporan
     </h1>
-    <p class="text-slate-500 mt-2">
+    <p class="text-gray-700 mt-2 font-medium">
         Riwayat laporan barang kehilangan dan temuan
     </p>
 </div>
@@ -31,31 +31,30 @@ if ($status != "semua") {
 <!-- STATISTIC -->
 <div class="grid md:grid-cols-4 gap-6 mb-12">
 
-<div class="bg-white border rounded-xl p-6 shadow-sm">
-<p class="text-slate-500 text-sm">Total</p>
-<h2 class="text-3xl font-bold text-slate-900">3</h2>
+<div class="bg-purple-100 border-2 border-purple-400 rounded-xl p-6 shadow-sm">
+<p class="text-purple-800 text-sm font-semibold">Total</p>
+<h2 class="text-3xl font-bold text-purple-900 mt-2">3</h2>
 </div>
 
-<div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
-<p class="text-blue-600 text-sm">Aktif</p>
-<h2 class="text-3xl font-bold text-blue-700">1</h2>
+<div class="bg-blue-100 border-2 border-blue-400 rounded-xl p-6 shadow-sm">
+<p class="text-blue-800 text-sm font-semibold">Aktif</p>
+<h2 class="text-3xl font-bold text-blue-900 mt-2">1</h2>
 </div>
 
-<div class="bg-red-50 border border-red-200 rounded-xl p-6">
-<p class="text-red-600 text-sm">Pending</p>
-<h2 class="text-3xl font-bold text-red-700">1</h2>
+<div class="bg-red-100 border-2 border-red-400 rounded-xl p-6 shadow-sm">
+<p class="text-red-800 text-sm font-semibold">Pending</p>
+<h2 class="text-3xl font-bold text-red-900 mt-2">1</h2>
 </div>
 
-<div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-<p class="text-emerald-600 text-sm">Selesai</p>
-<h2 class="text-3xl font-bold text-emerald-700">1</h2>
+<div class="bg-green-100 border-2 border-green-400 rounded-xl p-6 shadow-sm">
+<p class="text-green-800 text-sm font-semibold">Selesai</p>
+<h2 class="text-3xl font-bold text-green-900 mt-2">1</h2>
 </div>
 
 </div>
-
 
 <!-- FILTER -->
-<div class="flex gap-8 border-b mb-10 text-sm font-medium">
+<div class="flex gap-8 border-b-2 border-purple-400 mb-10 text-sm font-semibold">
 
 <?php
 $menu=['semua','aktif','pending','selesai'];
@@ -65,15 +64,14 @@ foreach($menu as $m):
 <a href="?page=history&status=<?=$m?>"
 class="pb-3 transition
 <?=$status==$m
-? 'border-b-2 border-green-600 text-green-600'
-: 'text-slate-400 hover:text-green-600'?>">
+? 'border-b-4 border-purple-700 text-purple-800 font-bold'
+: 'text-gray-600 hover:text-purple-700 hover:border-b-2 hover:border-purple-300'?>">
 <?=ucfirst($m)?>
 </a>
 
 <?php endforeach; ?>
 
 </div>
-
 
 <!-- LIST HISTORY -->
 <div class="grid lg:grid-cols-2 gap-8">
@@ -82,11 +80,10 @@ class="pb-3 transition
 
 <div class="col-span-2 text-center py-24">
 
-<div class="w-20 h-20 mx-auto bg-slate-100 rounded-full flex items-center justify-center">
+<div class="w-20 h-20 mx-auto bg-purple-200 rounded-full flex items-center justify-center border-2 border-purple-400">
 
-<!-- ICON BOX -->
 <svg xmlns="http://www.w3.org/2000/svg"
-class="w-10 h-10 text-slate-400"
+class="w-10 h-10 text-purple-700"
 fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
 d="M3 7l9-4 9 4M4 10h16M5 10v8h14v-8"/>
@@ -94,11 +91,11 @@ d="M3 7l9-4 9 4M4 10h16M5 10v8h14v-8"/>
 
 </div>
 
-<h2 class="mt-6 text-xl font-semibold text-slate-700">
+<h2 class="mt-6 text-xl font-bold text-purple-800">
 Belum ada laporan
 </h2>
 
-<p class="text-slate-400 text-sm">
+<p class="text-gray-600 text-sm">
 Anda belum memiliki riwayat laporan
 </p>
 
@@ -109,44 +106,44 @@ Anda belum memiliki riwayat laporan
 
 <?php foreach($laporan as $l): ?>
 
-<div class="bg-white border rounded-2xl shadow-sm hover:shadow-md transition p-6 flex gap-5">
+<div class="bg-purple-50 border-2 border-purple-400 rounded-2xl shadow-sm hover:shadow-md transition p-6 flex gap-5">
 
 <!-- IMAGE -->
 <img src="<?=$l['img']?>"
-class="w-28 h-28 rounded-xl object-cover border">
+class="w-28 h-28 rounded-xl object-cover border-2 border-purple-500">
 
 <!-- CONTENT -->
 <div class="flex-1">
 
 <div class="flex justify-between items-center">
 
-<h3 class="font-semibold text-lg text-slate-900">
+<h3 class="font-bold text-lg text-purple-800">
 <?=$l['nama']?>
 </h3>
 
 <?php
 $statusClass = match($l['status']){
-'aktif' => 'bg-green-100 text-green-700 border border-green-300',
-'pending' => 'bg-red-100 text-red-700 border border-red-300',
-'selesai' => 'bg-emerald-100 text-emerald-700 border border-emerald-300',
+'aktif' => 'bg-green-200 text-green-800',
+'pending' => 'bg-red-200 text-red-800',
+'selesai' => 'bg-blue-200 text-blue-800',
 };
 ?>
 
-<span class="px-4 py-1 text-xs font-medium rounded-full <?=$statusClass?>">
+<span class="px-4 py-1 text-xs font-bold rounded-full border border-current <?=$statusClass?>">
 <?=ucfirst($l['status'])?>
 </span>
 
 </div>
 
-<p class="text-slate-500 text-sm mt-2">
+<p class="text-gray-700 text-sm mt-2">
 Deskripsi barang singkat...
 </p>
 
-<div class="flex gap-6 text-xs text-slate-400 mt-4 items-center">
+<div class="flex gap-6 text-xs text-gray-600 mt-4 items-center font-medium">
 
-<!-- LOCATION ICON -->
+<!-- LOCATION -->
 <div class="flex items-center gap-1">
-<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4"
+<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-purple-700"
 fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1.5"
@@ -155,9 +152,9 @@ d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657A8 8 0 1117.657 16.65
 Kampus A
 </div>
 
-<!-- DATE ICON -->
+<!-- DATE -->
 <div class="flex items-center gap-1">
-<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4"
+<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-purple-700"
 fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1.5"

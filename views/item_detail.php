@@ -2,7 +2,6 @@
 
 <?php
 $id = $_GET['id'] ?? 1;
-$showClaimModal = isset($_GET['claim']) && $_GET['claim']=='open';
 
 $itemData = [
     "id"=>1,
@@ -20,171 +19,126 @@ $itemData = [
 ];
 ?>
 
-<div class="bg-white min-h-screen py-12">
+<div class="min-h-screen py-10 bg-gradient-to-br from-gray-50 via-purple-50 to-gray-100">
 
-<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-6xl mx-auto px-6">
 
-<!-- BACK -->
 <a href="?page=home"
-class="inline-flex items-center gap-2 text-blue-600 font-medium mb-8 hover:text-green-700">
-
-<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
-fill="none" viewBox="0 0 24 24" stroke="currentColor">
-<path stroke-linecap="round" stroke-linejoin="round"
-stroke-width="2" d="M15 19l-7-7 7-7"/>
-</svg>
-
-Kembali
+class="inline-flex items-center gap-2 text-purple-700 font-medium mb-6 hover:text-purple-900 transition">
+Kembali ke beranda
 </a>
 
-
-<div class="grid lg:grid-cols-2 gap-12">
+<div class="grid lg:grid-cols-5 gap-10">
 
 <!-- IMAGE -->
-<div class="bg-white border rounded-2xl overflow-hidden shadow-sm">
-<img src="<?= $itemData['image'] ?>"
-class="w-full h-[420px] object-cover">
+<div class="lg:col-span-3">
+    <div class="rounded-xl overflow-hidden border-2 border-purple-300 bg-white shadow-sm">
+        <img src="<?= $itemData['image'] ?>"
+             class="w-full h-[460px] object-cover">
+    </div>
 </div>
 
+<!-- RIGHT PANEL -->
+<div class="lg:col-span-2 space-y-6">
 
-<!-- DETAIL -->
-<div class="space-y-8">
+    <!-- TITLE CARD -->
+    <div class="bg-white rounded-xl p-5 border-2 border-purple-300 shadow-sm hover:shadow-md transition">
+        <div class="flex justify-between items-start gap-4">
 
-<!-- TITLE -->
-<div class="flex justify-between items-start">
+            <h1 class="text-2xl font-bold text-gray-900">
+                <?= $itemData['title'] ?>
+            </h1>
 
-<h1 class="text-3xl font-bold text-slate-900">
-<?= $itemData['title'] ?>
-</h1>
+            <span class="px-3 py-1 text-xs rounded-full font-semibold
+            <?= $itemData['status']=='Hilang'
+            ? 'bg-red-100 text-red-600'
+            : 'bg-green-100 text-green-600' ?>">
+                <?= $itemData['status'] ?>
+            </span>
 
-<span class="px-4 py-1 text-sm rounded-full font-medium
-<?= $itemData['status']=='Hilang'
-? 'bg-red-100 text-red-700 border border-red-300'
-: 'bg-green-100 text-green-700 border border-green-300' ?>">
-<?= $itemData['status'] ?>
-</span>
-
-</div>
-
-
-<!-- DESCRIPTION -->
-<div>
-<h2 class="font-semibold text-lg text-slate-800 mb-2">
-Deskripsi
-</h2>
-
-<p class="text-slate-600 leading-relaxed">
-<?= $itemData['description'] ?>
-</p>
-</div>
+        </div>
+    </div>
 
 
-<!-- INFO CARD -->
-<div class="border rounded-xl p-6 grid sm:grid-cols-3 gap-6 bg-slate-50">
+    <!-- DESCRIPTION CARD -->
+    <div class="bg-white rounded-xl p-5 border-2 border-purple-300 shadow-sm hover:shadow-md transition">
 
-<div>
-<p class="text-xs text-slate-500">Lokasi</p>
-<p class="font-semibold text-slate-800">
-<?= $itemData['location'] ?>
-</p>
-</div>
+        <h2 class="text-sm font-bold text-purple-700 mb-2">
+            Deskripsi Barang
+        </h2>
 
-<div>
-<p class="text-xs text-slate-500">Tanggal</p>
-<p class="font-semibold text-slate-800">
-<?= $itemData['date'] ?>
-</p>
-</div>
+        <p class="text-gray-700 text-sm leading-relaxed">
+            <?= $itemData['description'] ?>
+        </p>
 
-<div>
-<p class="text-xs text-slate-500">Waktu</p>
-<p class="font-semibold text-slate-800">
-<?= $itemData['time'] ?>
-</p>
-</div>
-
-</div>
+    </div>
 
 
-<!-- REPORTER -->
-<div class="border rounded-xl p-6 bg-white">
+    <!-- INFO CARD -->
+<div class="bg-white rounded-xl p-5 space-y-4 border-2 border-purple-400 shadow-sm">
 
-<h3 class="font-semibold text-slate-800 mb-4">
-Dilaporkan Oleh
-</h3>
+    <div class="border-b border-purple-200 pb-3">
+        <p class="text-xs text-purple-600 font-semibold uppercase tracking-wide">Lokasi</p>
+        <p class="text-gray-800 font-medium mt-1"><?= $itemData['location'] ?></p>
+    </div>
 
-<p class="text-slate-900 font-semibold">
-<?= $itemData['reporter']['name'] ?>
-</p>
+    <div class="border-b border-purple-200 pb-3">
+        <p class="text-xs text-purple-600 font-semibold uppercase tracking-wide">Tanggal</p>
+        <p class="text-gray-800 font-medium mt-1"><?= $itemData['date'] ?></p>
+    </div>
 
-<p class="text-green-600 text-sm font-medium">
-<?= $itemData['reporter']['phone'] ?>
-</p>
+    <div>
+        <p class="text-xs text-purple-600 font-semibold uppercase tracking-wide">Waktu</p>
+        <p class="text-gray-800 font-medium mt-1"><?= $itemData['time'] ?></p>
+    </div>
 
 </div>
 
 
-<!-- BUTTON -->
-<div class="flex gap-4 pt-2">
+    <!-- REPORTER CARD -->
+    <div class="bg-white rounded-xl p-5 border-2 border-purple-300 shadow-sm hover:shadow-md transition">
 
-<a href="?page=detail&id=<?=$id?>&claim=open"
-class="flex-1 text-center bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+        <h3 class="text-sm font-bold text-purple-700 mb-3">
+            Dilaporkan Oleh
+        </h3>
 
-<?= $itemData['status']=='Hilang'
-? 'Klaim Barang'
-: 'Hubungi Pelapor' ?>
+        <p class="text-gray-900 font-semibold">
+            <?= $itemData['reporter']['name'] ?>
+        </p>
 
-</a>
+        <p class="text-purple-700 text-sm font-medium">
+            <?= $itemData['reporter']['phone'] ?>
+        </p>
 
-<button
-class="flex-1 border border-red-400 text-red-600 py-3 rounded-lg font-semibold hover:bg-red-50 transition">
-Tolak
-</button>
-
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
+    </div>
 
 
-<!-- MODAL CLAIM -->
-<?php if($showClaimModal): ?>
+    <!-- ACTION -->
+    <div class="flex gap-3">
 
-<div class="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <a href="?page=detail&id=<?=$id?>&claim=open"
+           class="flex-1 text-center bg-purple-700 text-white py-3 rounded-lg font-semibold
+           border-2 border-purple-800 shadow-sm hover:bg-purple-800 hover:shadow-md transition">
 
-<div class="bg-white rounded-2xl p-8 w-full max-w-md shadow-xl">
+            <?= $itemData['status']=='Hilang'
+            ? 'Klaim Barang'
+            : 'Hubungi Pelapor' ?>
 
-<h2 class="text-xl font-bold text-slate-900 mb-3">
-Klaim Barang
-</h2>
+        </a>
 
-<p class="text-slate-600 mb-6">
-Anda akan mengklaim:
-<b><?= $itemData['title'] ?></b>
-</p>
+        <button
+            class="px-5 border-2 border-red-300 text-red-600 py-3 rounded-lg font-semibold
+            hover:bg-red-50 transition">
+            Tolak
+        </button>
 
-<div class="flex gap-3">
-
-<a href="?page=detail&id=<?=$id?>"
-class="flex-1 text-center border py-2 rounded-lg">
-Batal
-</a>
-
-<button
-class="flex-1 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
-Kirim Klaim
-</button>
+    </div>
 
 </div>
 
 </div>
 </div>
-
-<?php endif; ?>
-
+</div>
 
 <?php
 $content = ob_get_clean();

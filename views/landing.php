@@ -9,25 +9,28 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gradient-to-br from-white via-purple-50 to-white text-gray-800">
+
 
 <!-- ================= NAVBAR ================= -->
-<nav class="fixed w-full bg-white border-b z-50">
+<nav class="fixed w-full z-50 backdrop-blur bg-white/70 border-b border-purple-100">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <h1 class="text-xl font-bold text-blue-600">
+        <h1 class="text-2xl font-extrabold text-purple-700 tracking-wide">
             BALANG
         </h1>
 
-        <div class="flex gap-8 items-center">
-            <a href="#" class="hover:text-blue-600">Home</a>
-            <a href="#fitur" class="hover:text-blue-600">Fitur</a>
-            <a href="#cara" class="hover:text-blue-600">Cara Kerja</a>
+        <div class="flex gap-8 items-center text-sm">
+
+            <a href="#" class="text-gray-700 hover:text-purple-700 transition">Home</a>
+            <a href="#fitur" class="text-gray-700 hover:text-purple-700 transition">Fitur</a>
+            <a href="#cara" class="text-gray-700 hover:text-purple-700 transition">Cara Kerja</a>
 
             <a href="?page=login"
-               class="px-5 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50">
+               class="px-5 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800 shadow-sm transition">
                 Masuk
             </a>
+
         </div>
 
     </div>
@@ -35,20 +38,21 @@
 
 
 <!-- ================= HERO ================= -->
-<section class="pt-32 pb-24 bg-white border-b">
+<section class="pt-36 pb-28 text-center">
 
-<div class="max-w-5xl mx-auto px-6 text-center">
+<div class="max-w-4xl mx-auto px-6">
 
-<h1 class="text-5xl font-bold mb-6">
-Temukan Barang Hilang Dengan Mudah
+<h1 class="text-5xl font-extrabold mb-6 leading-tight">
+Temukan Barang Hilang <br>
+<span class="text-purple-700">Lebih Cepat & Mudah</span>
 </h1>
 
 <p class="text-gray-600 text-lg mb-10">
-BALANG membantu pengguna melaporkan barang hilang dan menemukan kembali barang yang ditemukan orang lain dalam satu sistem terpusat.
+BALANG membantu masyarakat melaporkan dan menemukan barang hilang dalam satu sistem yang terpusat dan real-time.
 </p>
 
 <a href="?page=login"
-   class="px-10 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 font-semibold">
+   class="px-10 py-3 bg-purple-700 text-white rounded-xl hover:bg-purple-800 shadow-md hover:shadow-lg transition">
 Mulai Sekarang
 </a>
 
@@ -57,34 +61,34 @@ Mulai Sekarang
 
 
 <!-- ================= FITUR ================= -->
-<section id="fitur" class="py-24 bg-gray-50 border-b">
+<section id="fitur" class="py-24 bg-white">
 
 <div class="max-w-7xl mx-auto px-6">
 
-<h2 class="text-4xl font-bold text-center mb-16">
+<h2 class="text-4xl font-bold text-center mb-16 text-purple-700">
 Fitur BALANG
 </h2>
 
 <div class="grid md:grid-cols-3 gap-8">
 
-<div class="bg-white border rounded-xl p-8 hover:border-blue-600 transition">
-<h3 class="font-bold text-lg mb-3">Lapor Barang Hilang</h3>
-<p class="text-gray-600">
-Pengguna dapat melaporkan barang hilang lengkap dengan informasi detail.
+<div class="border-2 border-purple-200 rounded-2xl p-8 bg-white hover:border-purple-400 hover:shadow-lg transition">
+<h3 class="font-bold text-lg mb-3 text-purple-700">Lapor Barang Hilang</h3>
+<p class="text-gray-600 text-sm">
+Laporkan barang hilang dengan detail lengkap dan mudah.
 </p>
 </div>
 
-<div class="bg-white border rounded-xl p-8 hover:border-blue-600 transition">
-<h3 class="font-bold text-lg mb-3">Barang Ditemukan</h3>
-<p class="text-gray-600">
-Menampilkan daftar barang temuan yang dilaporkan pengguna lain.
+<div class="border-2 border-purple-200 rounded-2xl p-8 bg-white hover:border-purple-400 hover:shadow-lg transition">
+<h3 class="font-bold text-lg mb-3 text-purple-700">Barang Ditemukan</h3>
+<p class="text-gray-600 text-sm">
+Melihat barang yang ditemukan oleh pengguna lain.
 </p>
 </div>
 
-<div class="bg-white border rounded-xl p-8 hover:border-blue-600 transition">
-<h3 class="font-bold text-lg mb-3">Hubungi Penemu</h3>
-<p class="text-gray-600">
-Mempermudah komunikasi antara pemilik dan penemu barang.
+<div class="border-2 border-purple-300 rounded-2xl p-8 bg-white hover:border-purple-500 hover:shadow-lg transition">
+<h3 class="font-bold text-lg mb-3 text-purple-700">Hubungi Penemu</h3>
+<p class="text-gray-600 text-sm">
+Komunikasi langsung antara pemilik dan penemu barang.
 </p>
 </div>
 
@@ -95,73 +99,35 @@ Mempermudah komunikasi antara pemilik dan penemu barang.
 
 
 <!-- ================= CARA KERJA ================= -->
-<section id="cara" class="py-24 bg-white border-b">
+<section id="cara" class="py-24 bg-purple-50">
 
 <div class="max-w-7xl mx-auto px-6">
 
-<h2 class="text-4xl font-bold text-center mb-16">
+<h2 class="text-4xl font-bold text-center mb-16 text-purple-700">
 Cara Kerja
 </h2>
 
 <div class="grid md:grid-cols-4 gap-6 text-center">
 
-<div class="border rounded-xl p-6">
-<h3 class="font-bold mb-2">1. Daftar</h3>
-<p class="text-gray-600 text-sm">Buat akun pengguna.</p>
+<?php
+$steps = [
+"Daftar",
+"Lapor",
+"Pencarian",
+"Ambil"
+];
+?>
+
+<?php foreach ($steps as $i => $step): ?>
+<div class="bg-white border-2 border-purple-200 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition">
+    <div class="text-purple-700 font-bold text-lg mb-2">
+        <?= $i+1 ?>. <?= $step ?>
+    </div>
+    <p class="text-gray-600 text-sm">
+        Proses sederhana untuk membantu menemukan barang.
+    </p>
 </div>
-
-<div class="border rounded-xl p-6">
-<h3 class="font-bold mb-2">2. Lapor</h3>
-<p class="text-gray-600 text-sm">Laporkan kehilangan atau temuan.</p>
-</div>
-
-<div class="border rounded-xl p-6">
-<h3 class="font-bold mb-2">3. Pencarian</h3>
-<p class="text-gray-600 text-sm">Cari barang sesuai kategori.</p>
-</div>
-
-<div class="border rounded-xl p-6">
-<h3 class="font-bold mb-2">4. Ambil</h3>
-<p class="text-gray-600 text-sm">Hubungi penemu dan ambil barang.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= KEUNGGULAN ================= -->
-<section class="py-24 bg-gray-50 border-b">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<h2 class="text-4xl font-bold text-center mb-16">
-Mengapa BALANG
-</h2>
-
-<div class="grid md:grid-cols-3 gap-8">
-
-<div class="border rounded-xl p-6">
-<h3 class="font-semibold mb-2">Terpusat</h3>
-<p class="text-gray-600 text-sm">
-Semua laporan berada dalam satu sistem.
-</p>
-</div>
-
-<div class="border rounded-xl p-6">
-<h3 class="font-semibold mb-2">Realtime</h3>
-<p class="text-gray-600 text-sm">
-Status barang diperbarui secara langsung.
-</p>
-</div>
-
-<div class="border rounded-xl p-6">
-<h3 class="font-semibold mb-2">Mudah Digunakan</h3>
-<p class="text-gray-600 text-sm">
-Antarmuka sederhana untuk semua pengguna.
-</p>
-</div>
+<?php endforeach; ?>
 
 </div>
 
@@ -170,14 +136,18 @@ Antarmuka sederhana untuk semua pengguna.
 
 
 <!-- ================= CTA ================= -->
-<section class="py-24 bg-white text-center border-b">
+<section class="py-24 text-center bg-white">
 
-<h2 class="text-4xl font-bold mb-6">
-Mulai Gunakan BALANG
+<h2 class="text-4xl font-bold mb-6 text-purple-700">
+Siap Menggunakan BALANG?
 </h2>
 
+<p class="text-gray-600 mb-8">
+Mulai sekarang dan bantu temukan barang hilang lebih cepat.
+</p>
+
 <a href="?page=login"
-   class="px-10 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 font-semibold">
+   class="px-10 py-3 bg-purple-700 text-white rounded-xl hover:bg-purple-800 shadow-md transition">
 Masuk Sekarang
 </a>
 
@@ -185,8 +155,8 @@ Masuk Sekarang
 
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gray-900 text-gray-400 py-8 text-center">
-BALANG © <?= date('Y'); ?>
+<footer class="bg-purple-900 text-purple-100 py-8 text-center text-sm">
+BALANG © <?= date('Y'); ?> — All rights reserved
 </footer>
 
 </body>
